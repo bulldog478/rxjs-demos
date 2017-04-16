@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <title>监控折线图</title>
+</head>
+
+<body>
+    <ul class="nav nav-tabs">
+        <li id="age" class="active"><a href="#">年龄</a></li>
+        <li id="income"><a href="#">收入</a></li>
+    </ul>
+    <div id="showAge" style="width: 900px;height:500px;">
+    </div>
+    <div id="showIncome" style="width: 900px;height:500px;">
+    </div>
+    <script src="https://unpkg.com/jquery@1.9.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/dist/main.bundle.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var $ageTabDom = $('#age')
+            var $incomeTabDom = $('#income')
+            var $showAgeDom = $('#showAge')
+            var $showIncomeDom = $('#showIncome')
+
+            $showIncomeDom.css('display', 'none')
+
+            $ageTabDom.click(function () {
+                toggle($ageTabDom, $showAgeDom, $incomeTabDom, $showIncomeDom)
+            })
+            $incomeTabDom.click(function () {
+                toggle($incomeTabDom, $showIncomeDom, $ageTabDom, $showAgeDom)
+            })
+
+            function toggle(showTab, showBody, hideTab, hideBody) {
+                if (!showTab.hasClass('active')) {
+                    showTab.addClass('active')
+                    hideTab.removeClass('active')
+                }
+
+                if (showBody.css('display') === 'none') {
+                    showBody.css('display', 'block')
+                    hideBody.css('display', 'none')
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

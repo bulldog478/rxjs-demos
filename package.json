@@ -1,0 +1,21 @@
+{
+  "name": "rxjs-demos",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts" : {
+    "build": "webpack-dev-server --hot --inline"
+  },
+  "dependencies": {
+    "axios": "^0.16.0",
+    "echarts": "^3.5.2",
+    "jquery": "^1.9.1",
+    "rxjs": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/echarts": "0.0.5",
+    "awesome-typescript-loader": "^3.1.2",
+    "typescript": "^2.2.2",
+    "webpack": "^2.3.2"
+  }
+}
